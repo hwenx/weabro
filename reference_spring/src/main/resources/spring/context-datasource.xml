@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd">
+						
+<!-- 	<bean id="propertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" value="/WEB-INF/mybatis/jdbc.properties" />   
+    </bean> -->
+    
+<!-- 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="org.mariadb.jdbc" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean> -->
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+	    <property name="url" value="jdbc:mysql://localhost:3306/test"/>
+	    <property name="username" value="root"/>
+	    <property name="password" value="1234"/>
+	    
+	    <!-- 서비스 기동할때의 생성 개수 -->
+		<property name="initialSize" value="4"/>
+		<!-- 한번에 처리 할수 있는 최대 개수 -->
+		<property name="maxActive" value="10"/>		
+		<!-- pool 에 존재 할수있는 최대 개수 -->
+        <property name="maxIdle" value="8"/>
+        <!-- pool 에 존재 할수있는 최소 개수 -->
+        <property name="minIdle" value="4"/>        
+        <!--maxActive 개수 이상으로 호출이 들어왔을때 최대 대기 시간 -->
+        <property name="maxWait" value="10000"/>
+	    
+	</bean>
+
+</beans>

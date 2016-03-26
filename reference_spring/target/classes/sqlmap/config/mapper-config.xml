@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+	
+	
+<configuration>
+    
+    <!--                        						     Mybatis Alias Setting                                           -->
+	<!--     ex]				 <typeAlias alias="알리아스명" type="모델패키지 경로.모델명"/> 					-->
+	<!--     ex] <typeAlias alias="commonModel" type="com.test.testspring.models.CommonModel"/> -->
+    <typeAliases>
+        <typeAlias alias="userModel"					type="com.jechue.spring.sample.admin.models.UserModel" />
+        <typeAlias alias="listModel"					type="com.jechue.spring.sample.admin.models.ListModel" />
+        <typeAlias alias="limitPointModel"			type="com.jechue.spring.core.models.LimitPointModel" />
+        
+    </typeAliases>
+    
+</configuration>

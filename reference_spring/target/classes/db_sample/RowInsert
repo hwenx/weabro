@@ -1,0 +1,2 @@
+INSERT INTO `test`.`test_ajax_tb` (`id`, `name`, `addr`, `reg_date`, `phone`, `pass`) 
+VALUES ('test6', '테스터6', '서울', '2016-01-11', '010-4485-8372', '1234');

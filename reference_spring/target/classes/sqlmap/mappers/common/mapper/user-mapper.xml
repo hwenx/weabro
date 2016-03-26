@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jechue.spring.sample.admin.mapper.IMainMapper">
+    
+    <select id="selectUserCount" resultType="int">
+		SELECT COUNT(A.id)
+		FROM test_ajax_tb A	        	
+    </select>
+    
+    <select id="selectUser" parameterType="String" resultType="userModel">
+        SELECT 
+        	 A.id AS id,
+        	 A.pass AS password,
+        	 A.name AS name,
+        	 A.phone AS phone,
+        	 A.addr AS address
+		FROM test_ajax_tb AS A
+		WHERE id=#{id}
+        
+    </select> 
+    
+    <select id="selectUserList" parameterType="limitPointModel" resultType="listModel">
+       	SELECT *
+		FROM 
+			(SELECT 
+			B.*
+			FROM
+	     		(SELECT 
+	     		(SELECT @rownum := @rownum + 1) AS rownum,
+	     		A.*
+	     		FROM (SELECT @rownum := 0) R, (SELECT * FROM test_ajax_tb) A
+	    		 ORDER BY A.reg_date asc) B
+	     	ORDER BY B.rownum DESC
+	     	LIMIT #{x}, #{y}) C
+	     ORDER BY C.rownum DESC 
+        
+    </select>
+    
+</mapper>

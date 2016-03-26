@@ -1,0 +1,11 @@
+context-datasource.xml
+데이타소스 bean 관리
+
+context-mapper.xml
+mybatis mapper 사용 세팅
+
+context-properties.xml
+여러 DB사용시 db 관리 property
+
+context-transaction.xml
+트랜잭션 bean 관리

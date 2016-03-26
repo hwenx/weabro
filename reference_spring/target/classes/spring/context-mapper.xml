@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+						
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<!-- mybatis config setting -->
+		<property name="configLocation" value="classpath:sqlmap/config/mapper-config.xml"/>
+		<!-- mapper을 사용하기위해 sqlmap/mapper/ 하위 패키지 xml 검색 -->
+		<property name="mapperLocations" value="classpath:sqlmap/mappers/**/*.xml"/>
+	</bean>
+	
+	
+ 		<!-- mapper 스캔 setting -->
+ 	<bean id="mapper" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	    <property name="basePackage" value="com.jechue.spring*"/>
+	    <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/> 
+	</bean> 
+
+</beans>
