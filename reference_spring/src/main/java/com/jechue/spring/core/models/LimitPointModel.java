@@ -1,6 +1,6 @@
 package com.jechue.spring.core.models;
 
-//paging 처리 순서쌍 db 제공
+//paging 泥섎━ �닚�꽌�뙇 db �젣怨�
 public class LimitPointModel {
 	
 	private int x;
@@ -11,7 +11,6 @@ public class LimitPointModel {
 		y = $y;
 		
 	}
-
 
 	public int getX() {
 		return x;
