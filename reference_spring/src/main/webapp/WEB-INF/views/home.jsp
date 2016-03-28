@@ -53,6 +53,5 @@ requirejs(['jquery', 'bootstrap'], function($) {
 
 	
 });
-
 </script>
 </html>

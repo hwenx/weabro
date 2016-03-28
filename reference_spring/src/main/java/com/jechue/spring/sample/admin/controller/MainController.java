@@ -42,7 +42,7 @@ public class MainController {
 		return mav;
 	}
 	
-	@RequestMapping(value="/main/{viewname}", method=RequestMethod.GET)
+	@RequestMapping(value="/main/{viewname}", method={RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView main(@PathVariable("viewname") String view, ModelAndView mav, HttpServletRequest req){
 		System.out.println("main");
 		System.out.println("view : " + view);
@@ -90,6 +90,19 @@ public class MainController {
 		
 		return mav;
 	}
+	
+	@RequestMapping(value="/main/joinpage/joinprocess", method=RequestMethod.POST)
+	public ModelAndView joinProcess(ModelAndView mav, HttpServletRequest req, HttpServletResponse res){
+		System.out.println("joinProcess");
+		HttpSession session = req.getSession();
+		session.invalidate();
+		
+		mav.setViewName("redirect:/");
+		
+		return mav;
+	}
+	
+	
 	
 
 	

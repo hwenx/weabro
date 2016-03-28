@@ -16,7 +16,7 @@
 			</div>
 		</c:if>
 		<c:if test="${isLoginYn != 'Y'}">
-			<form class="form-horizontal" role="form" action="/spring/main/login"
+			<form class="form-horizontal" role="form" action=""
 				method="post">
 				<div class="form-group">
 
@@ -46,8 +46,8 @@
 				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-default">login</button>
-						<button type="submit" class="btn btn-default">Sign in</button>
+						<button type="button" class="btn btn-default" onclick="javascript:form.action='./login';form.submit();">login</button>
+						<button type="button" class="btn btn-default" onclick="javascript:form.action='./joinpage';form.submit();">Sign in</button>
 					</div>
 				</div>
 			</form>
@@ -118,3 +118,13 @@
 		</table>
 	</div>
 </div>
+
+<script type="text/javascript">
+	requirejs([ 'jquery', 'bootstrap' ], function($) {
+		$('.btn').submit(function() {
+			alert('Handler for .submit() called.');
+			return false;
+		});
+
+	});
+</script>
