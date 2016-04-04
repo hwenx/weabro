@@ -21,9 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.jechue.spring.core.models.PageInfoInputData;
 import com.jechue.spring.core.models.Response;
-import com.jechue.spring.core.util.PageInfo;
 import com.jechue.spring.sample.admin.models.UserModel;
 import com.jechue.spring.sample.admin.service.IMainService;
 
@@ -101,32 +99,7 @@ public class MainController {
 		
 		return mav;
 	}
-	
-	
-	
 
-	
-	@RequestMapping(value="/user/userlist/{page}/{offset}", method= RequestMethod.GET)
-	public @ResponseBody Response getUserList (@PathVariable ("page") int page, @PathVariable("offset") int offset, @RequestParam("params") String param){
-		
-		System.out.println("----controller-------");
-		System.out.println(param);
-		System.out.println("page : " + page +", offset : " + offset);
-		System.out.println("----controller-------");
-		int totalRows = mainService.getUserCount();
-		System.out.println(totalRows);
-		Response result = new Response();
-		PageInfo pageInfo = new PageInfo(new PageInfoInputData(page, offset, totalRows));
-		result.data = mainService.getUserList(pageInfo.getOrderedPair(page));
-				
-		if(result.data != null) {
-			result.setStat("ok");
-		}else {
-			result.setStat("fail");
-		}
-		System.out.println("----" + result + "----");
-		return result;
-	}
 	
 	@RequestMapping(value="/user/userdetail/{id}", method =  RequestMethod.GET)
 	public @ResponseBody Response getUser(@PathVariable String id){

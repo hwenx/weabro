@@ -7,7 +7,6 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.jechue.spring.core.models.LimitPointModel;
 import com.jechue.spring.sample.admin.mapper.IMainMapper;
 import com.jechue.spring.sample.admin.models.ListModel;
 import com.jechue.spring.sample.admin.models.UserModel;
@@ -25,16 +24,6 @@ public class MainServiceImpl implements IMainService{
 	public int getUserCount(){
 		System.out.println("=======  UserCount =======");
 		return mapper.selectUserCount();
-	}
-
-	@Override
-	public List<ListModel> getUserList(LimitPointModel limitPoint){
-		
-
-		System.out.println("=======  UserList =======");
-		List<ListModel> listModel = mapper.selectUserList(limitPoint);
-		return listModel;
-
 	}
 	
 	@Override
