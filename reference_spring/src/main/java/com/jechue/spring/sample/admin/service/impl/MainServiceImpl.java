@@ -1,14 +1,11 @@
 package com.jechue.spring.sample.admin.service.impl;
 
 
-import java.util.List;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jechue.spring.sample.admin.mapper.IMainMapper;
-import com.jechue.spring.sample.admin.models.ListModel;
 import com.jechue.spring.sample.admin.models.UserModel;
 import com.jechue.spring.sample.admin.service.IMainService;
 

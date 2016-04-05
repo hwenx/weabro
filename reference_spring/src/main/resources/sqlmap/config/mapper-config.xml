@@ -12,7 +12,6 @@
     <typeAliases>
         <typeAlias alias="userModel"					type="com.jechue.spring.sample.admin.models.UserModel" />
         <typeAlias alias="listModel"					type="com.jechue.spring.sample.admin.models.ListModel" />
-        <typeAlias alias="limitPointModel"			type="com.jechue.spring.core.models.LimitPointModel" />
         
     </typeAliases>
     

@@ -120,11 +120,11 @@
 </div>
 
 <script type="text/javascript">
-	requirejs([ 'jquery', 'bootstrap' ], function($) {
-		$('.btn').submit(function() {
-			alert('Handler for .submit() called.');
-			return false;
-		});
-
+requirejs([ 'jquery', 'bootstrap' ], function($) {
+	$('.btn').submit(function() {
+		alert('Handler for .submit() called.');
+		return false;
 	});
+
+});
 </script>

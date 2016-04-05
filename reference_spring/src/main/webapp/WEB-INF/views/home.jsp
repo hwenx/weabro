@@ -43,14 +43,12 @@
 .row{
  	margin-left:-2px;
 	margin-right:-2px;
-	border: 1px solid #FF0000;
+	/* border: 1px solid #FF0000; */
 	padding-top:10px;
 }
 </style>
 <script type="text/javascript">
 requirejs(['jquery', 'bootstrap'], function($) {
-	
-
 	
 });
 </script>

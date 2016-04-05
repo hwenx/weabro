@@ -1,10 +1,7 @@
 package com.jechue.spring.sample.admin.mapper;
 
-import java.util.List;
-
 import org.springframework.stereotype.Repository;
 
-import com.jechue.spring.sample.admin.models.ListModel;
 import com.jechue.spring.sample.admin.models.UserModel;
 
 @Repository

@@ -19,22 +19,6 @@
 		WHERE id=#{id}
         
     </select> 
-    
-    <select id="selectUserList" parameterType="limitPointModel" resultType="listModel">
-       	SELECT *
-		FROM 
-			(SELECT 
-			B.*
-			FROM
-	     		(SELECT 
-	     		(SELECT @rownum := @rownum + 1) AS rownum,
-	     		A.*
-	     		FROM (SELECT @rownum := 0) R, (SELECT * FROM test_ajax_tb) A
-	    		 ORDER BY A.reg_date asc) B
-	     	ORDER BY B.rownum DESC
-	     	LIMIT #{x}, #{y}) C
-	     ORDER BY C.rownum DESC 
-        
-    </select>
+
     
 </mapper>

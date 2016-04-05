@@ -1,9 +1,6 @@
 package com.jechue.spring.sample.admin.controller;
 
 import java.util.Enumeration;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,18 +8,14 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.jechue.spring.core.models.Response;
-import com.jechue.spring.sample.admin.models.UserModel;
 import com.jechue.spring.sample.admin.service.IMainService;
 
 @Controller
@@ -49,30 +42,29 @@ public class MainController {
 		
 		Boolean check = (Boolean) session.getAttribute("isSession");
 		if(check != null && check) mav.addObject("isLoginYn", "Y");
-		
+
 		if("home".equals(view)){
 			mav.addObject("bodyContents", "body.jsp");
+			
 		}else{
 			mav.addObject("bodyContents", view+".jsp");
+			
 		}
-						
 			
 		return mav;
 	}
-	
 	
 	@RequestMapping(value="/main/login", method=RequestMethod.POST)
 	public ModelAndView login(ModelAndView mav, HttpServletRequest req, HttpServletResponse res){
 		HttpSession session = req.getSession();
 		Enumeration params = req.getParameterNames();
+		
 		while(params.hasMoreElements()){
 			String names = (String)params.nextElement();
 			session.setAttribute(names, req.getParameter(names));
 		}
 		session.setAttribute("lv", "1");
 		session.setAttribute("isSession", true);
-		
-		
 		
 		mav.setViewName("redirect:/");
 		
