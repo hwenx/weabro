@@ -9,7 +9,8 @@ requirejs.config({
     paths: {
         'jquery' 	: 'js/jquery/jquery-1.12.0',
         'bootstrap' : 'js/bootstrap/bootstrap',
-        'css'	 	: 'js/requirejs/require-css'
+        'css'	 	: 'js/requirejs/require-css',
+        'jquery.ui'	: 'js/jquery/jquery-ui.min'
         
     },
     
