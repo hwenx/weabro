@@ -8,7 +8,6 @@ requirejs.config({
     //the paths config could be for a directory.
     paths: {
         'jquery' 	  : 'js/jquery/jquery-1.12.0',
-        'jquery.mobile' 	  : 'js/jquery/jquery.mobile-1.4.5',
         'bootstrap'   : 'js/bootstrap/bootstrap',
         'css'	 	  : 'js/requirejs/require-css',
         'jquery.ui'	  : 'js/jquery/jquery-ui.min',
