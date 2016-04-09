@@ -10,8 +10,8 @@
 <body>
 	<!-- chatting 부분 -->
 	<div class="col-md-3" style="position:absolute;z-index: 999;margin-left:70%">
-            <div class="panel panel-primary" id="chatheader">
-                <div class="panel-heading">
+            <div class="panel panel-primary">
+                <div class="panel-heading" id="chatheader">
                     <span class="glyphicon glyphicon-comment"></span> Chat
                     <div class="btn-group pull-right">
                         <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
