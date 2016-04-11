@@ -13,7 +13,5 @@ public class AjaxController {
 		return null;
 		
 	}
-	
-	public 
-	
+
 }

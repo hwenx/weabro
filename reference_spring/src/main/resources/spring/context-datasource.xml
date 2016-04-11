@@ -18,9 +18,15 @@
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 	    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-	    <property name="url" value="jdbc:mysql://localhost:3306/test"/>
+	    <property name="url" value="jdbc:mysql://localhost:3306/webro"/>
 	    <property name="username" value="root"/>
 	    <property name="password" value="1234"/>
+
+<!-- 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+	    <property name="url" value="jdbc:mysql://webro.co5lcqf9koip.us-west-2.rds.amazonaws.com:3306/webro"/>
+	    <property name="username" value="webro"/>
+	    <property name="password" value="webro1234!"/> -->
 	    
 	    <!-- 서비스 기동할때의 생성 개수 -->
 		<property name="initialSize" value="4"/>
