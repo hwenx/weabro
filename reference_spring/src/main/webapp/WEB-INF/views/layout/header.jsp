@@ -27,8 +27,8 @@ requirejs(['jquery', 'bootstrap'], function($) {
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav" id="test">
 				<li><a href="./home">HOME</a></li>
-				<li><a href="./boardpage">메뉴1</a></li>
-				<li><a href="./schedulerpage">메뉴2</a></li>
+				<li><a href="./boardpage">Board</a></li>
+				<li><a href="./schedulerpage">Scheduler</a></li>
 <!-- 				<li><a href="#">HOME</a></li>
 				<li><a href="#">메뉴1</a></li>
 				<li><a href="#">메뉴2</a></li> -->
